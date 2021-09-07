@@ -12,9 +12,10 @@
     prompt: "Enter F5 Username"
     private: no
     default: "{{ lookup('env','USER') }}"
+    when: f5_username is not defined
   - name: f5_password
     prompt: "Enter F5 Password"
-  
+    when: f5_password is not defined
   tasks: 
 
 #  - name: Set authorized key took from file
