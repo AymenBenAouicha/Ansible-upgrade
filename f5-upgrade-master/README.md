@@ -27,5 +27,3 @@ If you want to install the new image to a definite boot location then define the
 The playbook will exit on any failure in the softwware activation tasks. This is to avoid taking out both members of a cluster.
 
 Investigate any hosts that have reported a problem, and re-run the playbook to continue. It will move quickly through tasks that were already done and proceed with remaining upgrades.
-
-I have found an issue where the `bigip_software_install` tasks can fail while waiting for the management interface to be available after a reboot. Increasing the timeout in the provider did not resolve this.
