@@ -24,7 +24,7 @@ If you want to install the new image to a definite boot location then define the
 
 ## Error Conditions
 
-The playbook will exit on any failure in the softwware activation tasks. This is to avoid taking out both members of a cluster.
+The playbook will exit on any failure in the software activation tasks. This is to avoid taking out both members of a cluster.
 
 Investigate any hosts that have reported a problem, and re-run the playbook to continue. It will move quickly through tasks that were already done and proceed with remaining upgrades.
 
