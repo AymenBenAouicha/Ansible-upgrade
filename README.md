@@ -28,6 +28,3 @@ The playbook will exit on any failure in the softwware activation tasks. This is
 
 Investigate any hosts that have reported a problem, and re-run the playbook to continue. It will move quickly through tasks that were already done and proceed with remaining upgrades.
 
-
-## Demo
-
