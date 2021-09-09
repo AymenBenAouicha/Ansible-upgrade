@@ -150,17 +150,7 @@
     - name: Message
       debug:
         var: result  
-    
-   # - name: Install Image
-      #bigip_software_install:
-        #provider: "{{ provider }}"
-        #image: "{{ new_image }}"
-        #state: installed
-        #volume: "{{ dest_boot_loc }}"
-      #when:
-     # - result.checksum is defined
-    #  - md5 == result.checksum
-      
+
         
     when: wants_upgrade
     
@@ -186,7 +176,6 @@
       when:
       - result.checksum is defined
       - md5 == result.checksum
-      register: sys_software_install
       
     when: (reboot_group == 0) and (wants_upgrade)
   
@@ -219,14 +208,6 @@
         stage: "pre"
       when: check_virts or check_pools or check_ver
       
-    #- name: Group 2 Activate Image (Will Cause Reboot)
-     # bigip_command:
-      #  provider: "{{ provider }}"
-       # match: "any"
-        #warn: no
-        #commands:
-         # - bash -c "reboot"
-      #any_errors_fatal: true
       
     - name: Group 2 Activate Image (Will Cause Reboot)
       bigip_software_install:
@@ -235,7 +216,6 @@
         state: activated
         volume: "{{ dest_boot_loc }}"
       any_errors_fatal: true
-      register: sys_software_install
       
      
     when: (reboot_group == 0) and (wants_upgrade)
